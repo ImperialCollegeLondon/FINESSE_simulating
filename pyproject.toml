@@ -1,0 +1,98 @@
+# see documentation, e.g.
+# - https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
+# - https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+# - https://www.python.org/dev/peps/pep-0621/
+
+[build-system]
+requires = ["setuptools>=64.0.0", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+authors = [
+    { name = "Sophie Mosselmans", email = "sophie.mosselmans19@imperial.ac.uk" },
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = []
+description = "Code for calibrating FINESSE interferograms"
+keywords = ["FINESSE"]
+license = { file = "LICENSE" }
+name = "finesse_processing"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.8"
+version = "0.1.0"
+
+[project.optional-dependencies]
+dev = [
+    "build",           # build is not only used in publishing (below), but also in the template's test suite
+    "bump-my-version",
+    "pre-commit",
+    "ruff",
+    "tox",
+    "myst_parser",
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+]
+scripts = ["cycler", "matplotlib", "numpy>=2", "pandas", "scipy"]
+publishing = ["build", "twine", "wheel"]
+
+[project.urls]
+Repository = "https://github.com/ImperialCollegeLondon/finesse_processing"
+Issues = "https://github.com/ImperialCollegeLondon/finesse_processing/issues"
+
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py38,py39,py310,py311,py312
+skip_missing_interpreters = true
+
+"""
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "D",   # pydocstyle
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "RUF", # ruff
+    "NPY", # numpy
+]
+pydocstyle.convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "D100", # Missing docstring in public module
+    "D104", # Missing docstring in public package
+]
+
+# Ignore scripts as they'll be refactored soon. This can be removed at some point.
+"Python_code_multi/*" = ["ALL"]
+
+[tool.pytest.ini_options]
+addopts = "-v -p no:warnings --cov=src/finesse_processing --cov-report=html --doctest-modules --ignore=Python_code_multi"
+
+[tool.bumpversion]
+current_version = "0.1.0"
+
+[[tool.bumpversion.files]]
+filename = "src/finesse_processing/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
