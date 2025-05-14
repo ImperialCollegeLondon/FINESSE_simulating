@@ -6,7 +6,7 @@ functions containing assert statements; their names must also start with "test_"
 Feel free to delete this file when there are actual unit tests in this folder.
 """
 
-from finesse_processing import __version__
+from finesse_simulating import __version__
 
 
 def test_version():

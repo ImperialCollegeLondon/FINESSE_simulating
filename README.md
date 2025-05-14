@@ -38,8 +38,22 @@ Here is a description of what each of the script files currently does:
 - For checking the final calibration spectra output
 - Features to add: Time evolution plots
 
-## How to use finesse_processing
+## `finesse_simulating` folder
 
+This contains the code to run LBLRTM simulations of FINESSE spectra which is separate from the processing code to read and calibrated FINESSE interferograms.
+
+Code is based on work done by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
+
+Contents include:
+
+- **/src** folder that includes functions and modules used to interact with LBLRTM outputs which should not need to be edited
+- **define_inputs.py** which is used to input profile variables, input and output paths, and specify lblrtm version
+- **run_lblrtm_FINESSE.py** the script to write the TAPE5, run the exe, and apply the FINESSE instrument line shape
+- **/example_input** contains an example profile to be read
+- **/example_output** contains an example output and plot
+- **EM27_ILS_test1_3_25.sav** is the EM27 ILS used for version 001 of the 2025_WHAFFFERS deliverarables (May 2025)
+
+Required modules are in src/module_function_list.py
 Code for calibrating FINESSE interferograms.
 
 The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
@@ -51,7 +65,7 @@ The project setup is documented in [project_setup.md](project_setup.md). Feel fr
 First you need to clone the repository:
 
 ```sh
-git clone git@github.com:ImperialCollegeLondon/finesse_processing.git
+git clone git@github.com:ImperialCollegeLondon/finesse_simulating.git
 ```
 
 ### (Optionally) make a virtual environment
@@ -91,27 +105,6 @@ pre-commit install
 Now, whenever you make a Git commit, your changes will be checked for errors and stylistic problems. (For a list of the hooks enabled for this repository, [see the configuration file](./.pre-commit-config.yaml)).
 
 The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci](https://pre-commit.ci).
-
-# `src` folder
-
-This will eventually contain all the functions needed to run the processing code.
-We will then reach out about how to better package these in the end of November 2024
-
-# `finesse_simulating` folder
-
-This contains the code to run LBLRTM simulations of FINESSE spectra which is separate from the processing code to read and calibrated FINESSE interferograms.
-
-Code is based on work done by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
-
-Contents include:
-
-- **/src** folder that includes functions and modules used to interact with LBLRTM outputs which should not need to be edited
-- **define_inputs.py** which is used to input profile variables, input and output paths, and specify lblrtm version
-- **run_lblrtm_FINESSE.py** the script to write the TAPE5, run the exe, and apply the FINESSE instrument line shape
-- **/example_input** contains an example profile to be read
-- **/example_output** contains an example output and plot
-- **EM27_ILS_test1_3_25.sav** is the EM27 ILS used for version 001 of the 2025_WHAFFFERS deliverarables (May 2025)
-Required modules are in src/module_function_list.py
 
 ## Credits
 
