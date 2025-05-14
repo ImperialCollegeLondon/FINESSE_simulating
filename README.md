@@ -1,6 +1,6 @@
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ImperialCollegeLondon/FINESSE_processing/main.svg)](https://results.pre-commit.ci/latest/github/ImperialCollegeLondon/FINESSE_processing/main)
-[![codecov](https://codecov.io/gh/ImperialCollegeLondon/FINESSE_processing/graph/badge.svg?token=DTS433S9E2)](https://codecov.io/gh/ImperialCollegeLondon/FINESSE_processing)
-[![CI](https://github.com/ImperialCollegeLondon/FINESSE_processing/actions/workflows/ci.yml/badge.svg)](https://github.com/ImperialCollegeLondon/FINESSE_processing/actions/workflows/ci.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ImperialCollegeLondon/FINESSE_simulating/main.svg)](https://results.pre-commit.ci/latest/github/ImperialCollegeLondon/FINESSE_simulating/main)
+[![codecov](https://codecov.io/gh/ImperialCollegeLondon/FINESSE_simulating/graph/badge.svg?token=DTS433S9E2)](https://codecov.io/gh/ImperialCollegeLondon/FINESSE_simulating)
+[![CI](https://github.com/ImperialCollegeLondon/FINESSE_simulating/actions/workflows/ci.yml/badge.svg)](https://github.com/ImperialCollegeLondon/FINESSE_simulating/actions/workflows/ci.yml)
 
 ## Badges
 
@@ -8,15 +8,15 @@
 
 | fair-software.eu recommendations | |
 | :-- | :--  |
-| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/ImperialCollegeLondon/finesse_processing) |
-| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/ImperialCollegeLondon/finesse_processing)](https://github.com/ImperialCollegeLondon/finesse_processing) |
-| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-finesse_processing-00a3e3.svg)](https://www.research-software.nl/software/finesse_processing) [![workflow pypi badge](https://img.shields.io/pypi/v/finesse_processing.svg?colorB=blue)](https://pypi.python.org/project/finesse_processing/) |
+| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/ImperialCollegeLondon/finesse_simulating) |
+| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/ImperialCollegeLondon/finesse_simulating)](https://github.com/ImperialCollegeLondon/finesse_simulating) |
+| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-finesse_simulating-00a3e3.svg)](https://www.research-software.nl/software/finesse_simulating) [![workflow pypi badge](https://img.shields.io/pypi/v/finesse_simulating.svg?colorB=blue)](https://pypi.python.org/project/finesse_simulating/) |
 | (4/5) citation                     | |
 | (5/5) checklist                    | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
 | howfairis                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
 | **Other best practices**           | &nbsp; |
 | **GitHub Actions**                 | &nbsp; |
-| Build                              | [![build](https://github.com/ImperialCollegeLondon/finesse_processing/actions/workflows/build.yml/badge.svg)](https://github.com/ImperialCollegeLondon/finesse_processing/actions/workflows/build.yml) |
+| Build                              | [![build](https://github.com/ImperialCollegeLondon/finesse_simulating/actions/workflows/build.yml/badge.svg)](https://github.com/ImperialCollegeLondon/finesse_simulating/actions/workflows/build.yml) |
 
 ## Documentation
 
@@ -49,7 +49,7 @@ git clone git@github.com:ImperialCollegeLondon/finesse_simulating.git
 
 ### (Optionally) make a virtual environment
 
-We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `FINESSE_processing` to keep the packages installed separate. You can do this like so:
+We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `FINESSE_simulating` to keep the packages installed separate. You can do this like so:
 
 ```sh
 python -m venv .venv
@@ -65,7 +65,7 @@ source .venv/bin/activate
 
 ### Install the developer dependencies
 
-Next you will want to install the dependencies for `FINESSE_processing` along with the developer tools required to work on the project.
+Next you will want to install the dependencies for `FINESSE_simulating` along with the developer tools required to work on the project.
 
 You can do this like so:
 

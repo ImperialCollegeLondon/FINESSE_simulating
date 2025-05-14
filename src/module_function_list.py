@@ -15,5 +15,5 @@ import matplotlib.pyplot as plt
 from write_tape5 import *
 from call_lblrtm import *
 from define_inputs import *
-from finesse_simulating.src.apply_ils_functions import *
+from apply_ils_functions import *
 import panel_file as panpy

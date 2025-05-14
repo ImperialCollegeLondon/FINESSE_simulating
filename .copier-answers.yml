@@ -2,12 +2,12 @@
 _commit: 0.6.1
 _src_path: https://github.com/nlesc/python-template.git
 copyright_holder: Imperial College London
-email: sophie.mosselmans19@imperial.ac.uk
-full_name: Sophie Mosselmans
+email: s.panditharatne21@imperial.ac.uk
+full_name: Sanjeevani Panditharatne
 github_organization: ImperialCollegeLondon
 keywords: FINESSE
 license: BSD
-package_name: finesse_processing
-package_short_description: Code for callibrating FINESSE interferograms
+package_name: finesse_simulating
+package_short_description: Code for simulating FINESSE measurements
 template_profile: minimum
 version: 0.1.0
