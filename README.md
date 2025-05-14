@@ -20,26 +20,6 @@
 
 ## Documentation
 
-This is for the FINESSE instrument at Imperial. It is processing code that includes calibration and plotting. This is only python code, there is also an IDL version. Run the code within the Python multi folder.
-
-Here is a description of what each of the script files currently does:
-
-- **File 0**  is just reading the sensors to track BB temperatures, PRT sensors and vaisala instrument pressure temperature humidity + co2
-
-- **File 1**  is preparing the interferograms for single or multi (averaged 40)
-
-- **File 2** is calculating the response functions (always done in multi case)
-
-- **File 3a single** is doing calibration for single case [NOTE THIS CODE IS NOT FINISHED]
-- **File 3b multi**  is doing calibration for multi case
-
-**Quick plot file:**
-
-- For checking the final calibration spectra output
-- Features to add: Time evolution plots
-
-## `finesse_simulating` folder
-
 This contains the code to run LBLRTM simulations of FINESSE spectra which is separate from the processing code to read and calibrated FINESSE interferograms.
 
 Code is based on work done by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
@@ -54,7 +34,6 @@ Contents include:
 - **EM27_ILS_test1_3_25.sav** is the EM27 ILS used for version 001 of the 2025_WHAFFFERS deliverarables (May 2025)
 
 Required modules are in src/module_function_list.py
-Code for calibrating FINESSE interferograms.
 
 The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
 
