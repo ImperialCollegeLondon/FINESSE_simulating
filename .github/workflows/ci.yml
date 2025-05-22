@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: pip install .[dev,scripts]
         
-      - name: Run tests
-        run: pytest --cov-report=xml
+      # - name: Run tests - removed tests folder because won't work without LBLRTM
+      #   run: pytest --cov-report=xml
 
       - name: Upload coverage to Codecov
         if: matrix.os == 'ubuntu-latest' && matrix.python-version && success()
