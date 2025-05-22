@@ -1,15 +1,15 @@
 import numpy as np
-from finesse_simulating import write_tape5 as wr
+from fir_simulation_wrapper import write_tape5 as wr
 
 # Specify location of LBLRTM executable
 lbl_location = "/net/thunder/data1/sp1016/lblrtm_12.17/"
 lbl_exe_name = "lblrtm_v12.17_linux_intel_dbl"
 
 # Specify location to save the output files
-save_location ="/net/thunder/data1/sp1016/FINESSE_LBLRTM/finesse_simulating/example_output/"
+save_location ="/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/"
 
 # Specify location of profiles
-profile_folder = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/finesse_simulating/example_input/"
+profile_folder = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_input/"
 
 # Specify atmospheric profile (note example profile has fummy z variable)
 # See write_tape_5.py instructions for types of atmosphere and setting units

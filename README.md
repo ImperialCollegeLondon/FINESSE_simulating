@@ -1,6 +1,6 @@
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ImperialCollegeLondon/FINESSE_simulating/main.svg)](https://results.pre-commit.ci/latest/github/ImperialCollegeLondon/FINESSE_simulating/main)
-[![codecov](https://codecov.io/gh/ImperialCollegeLondon/FINESSE_simulating/graph/badge.svg?token=DTS433S9E2)](https://codecov.io/gh/ImperialCollegeLondon/FINESSE_simulating)
-[![CI](https://github.com/ImperialCollegeLondon/FINESSE_simulating/actions/workflows/ci.yml/badge.svg)](https://github.com/ImperialCollegeLondon/FINESSE_simulating/actions/workflows/ci.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ImperialCollegeLondon/fir_simulation_wrapper/main.svg)](https://results.pre-commit.ci/latest/github/ImperialCollegeLondon/fir_simulation_wrapper/main)
+[![codecov](https://codecov.io/gh/ImperialCollegeLondon/fir_simulation_wrapper/graph/badge.svg?token=DTS433S9E2)](https://codecov.io/gh/ImperialCollegeLondon/fir_simulation_wrapper)
+[![CI](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/ci.yml/badge.svg)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/ci.yml)
 
 ## Badges
 
@@ -8,15 +8,15 @@
 
 | fair-software.eu recommendations | |
 | :-- | :--  |
-| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/ImperialCollegeLondon/finesse_simulating) |
-| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/ImperialCollegeLondon/finesse_simulating)](https://github.com/ImperialCollegeLondon/finesse_simulating) |
-| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-finesse_simulating-00a3e3.svg)](https://www.research-software.nl/software/finesse_simulating) [![workflow pypi badge](https://img.shields.io/pypi/v/finesse_simulating.svg?colorB=blue)](https://pypi.python.org/project/finesse_simulating/) |
+| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper) |
+| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/ImperialCollegeLondon/fir_simulation_wrapper)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper) |
+| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-fir_simulation_wrapper-00a3e3.svg)](https://www.research-software.nl/software/fir_simulation_wrapper) [![workflow pypi badge](https://img.shields.io/pypi/v/fir_simulation_wrapper.svg?colorB=blue)](https://pypi.python.org/project/fir_simulation_wrapper/) |
 | (4/5) citation                     | |
 | (5/5) checklist                    | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
 | howfairis                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
 | **Other best practices**           | &nbsp; |
 | **GitHub Actions**                 | &nbsp; |
-| Build                              | [![build](https://github.com/ImperialCollegeLondon/finesse_simulating/actions/workflows/build.yml/badge.svg)](https://github.com/ImperialCollegeLondon/finesse_simulating/actions/workflows/build.yml) |
+| Build                              | [![build](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/build.yml/badge.svg)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/build.yml) |
 
 ## Documentation
 
@@ -26,11 +26,11 @@ Code is based on work done by Laura Warwick, Sophie Mosselmans, and Sanjeevani P
 
 Contents include:
 
+- **/example_input** contains an example profile to be read
+- **/example_output** contains an example output and plot
 - **/src** folder that includes functions and modules used to interact with LBLRTM outputs which should not need to be edited
 - **define_inputs.py** which is used to input profile variables, input and output paths, and specify lblrtm version
 - **run_lblrtm_FINESSE.py** the script to write the TAPE5, run the exe, and apply the FINESSE instrument line shape
-- **/example_input** contains an example profile to be read
-- **/example_output** contains an example output and plot
 - **EM27_ILS_test1_3_25.sav** is the EM27 ILS used for version 001 of the 2025_WHAFFFERS deliverarables (May 2025)
 
 Required modules are in src/module_function_list.py
@@ -49,7 +49,7 @@ git clone git@github.com:ImperialCollegeLondon/fir_simulation_wrapper.git
 
 ### 2) (Optionally) make a virtual environment
 
-We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `finesse_simulating` to keep the packages installed separate. You can do this like so:
+We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `fir_simulation_wrapper` to keep the packages installed separate. You can do this like so:
 
 ```sh
 python -m venv .venv
@@ -65,7 +65,7 @@ source .venv/bin/activate
 
 ### 3) Install the developer dependencies
 
-Next you will want to install the dependencies for `finesse_simulating` along with the developer tools required to work on the project.
+Next you will want to install the dependencies for `fir_simulation_wrapper` along with the developer tools required to work on the project.
 
 You can do this like so:
 

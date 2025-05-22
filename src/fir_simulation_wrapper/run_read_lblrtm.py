@@ -4,8 +4,8 @@ Functions to run the LBLRTM executable and read TAPE12 output
 
 """
 
-from finesse_simulating.module_function_list import *
-from finesse_simulating.panel_file import *
+from fir_simulation_wrapper.module_function_list import *
+from fir_simulation_wrapper.panel_file import *
 
 # This class allows you to change the current working
 # directory as you would in linux. IT is needed to run

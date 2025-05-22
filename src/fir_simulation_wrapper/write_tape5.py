@@ -6,7 +6,7 @@ Edited: 06/06/2019: Clarified with print statement if calculating transmission o
 Edited: 23/06/2020: Can now prescribe continuum
 """
 
-from finesse_simulating.module_function_list import *
+from fir_simulation_wrapper.module_function_list import *
 
 
 def write_tape5_fn(

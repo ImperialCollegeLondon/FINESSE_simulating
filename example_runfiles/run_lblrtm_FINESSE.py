@@ -6,8 +6,8 @@ Authour: Sanjeevani Panditharatne
 Written: 30/04/2025
 """
 
-from define_inputs import *
-from finesse_simulating import *
+from define_inputs_FINESSE import *
+from fir_simulation_wrapper import *
 
 # Inputs are specified in define_inputs.py which calls the write_tape5.py script
 # These are printed in the output for clarity
@@ -29,7 +29,7 @@ wn_out, rad_out = process_spectrum_general(
 )
 
 # # Apply the FINESSE instruMent line shape
-ILS_LOCATION = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/finesse_simulating/aux/EM27_ILS_test1_3_25.sav"
+ILS_LOCATION = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/EM27_ILS_test1_3_25.sav"
 ils = readsav(ILS_LOCATION)
 ILS = ils["em27_ils"][:]
 apodised_wn, apodised_spectrum = apply_ILS_sav(ILS, wn_out, rad_out, pad_length=10)

@@ -7,7 +7,11 @@ The instrument line shape is then applied using apply_ILS_sav.
 Author: Sanjeevani Panditharatne
 """
 
-from finesse_simulating.module_function_list import *
+import numpy as np
+from scipy.fftpack import fft, ifft
+from scipy.interpolate import interp1d
+from scipy.io import readsav
+import xarray as xr
 
 
 def process_spectrum_general(

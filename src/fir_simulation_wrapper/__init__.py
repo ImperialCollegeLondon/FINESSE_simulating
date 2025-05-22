@@ -1,4 +1,4 @@
-"""Documentation about finesse_simulating."""
+"""Documentation about fir_simulation_wrapper."""
 
 import logging
 

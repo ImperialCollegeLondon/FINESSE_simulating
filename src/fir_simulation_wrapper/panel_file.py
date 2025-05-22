@@ -8,8 +8,10 @@ a mistake reading in the panel headers. This now seems to be fixed
 May 2025 Copied from Sophie Mosselmans Github
 """
 
-from finesse_simulating.module_function_list import *
-
+import struct
+from codecs import decode
+import numpy as np
+import os
 
 class panel_file_hdr:
     def __init__(self, _f, data_types):

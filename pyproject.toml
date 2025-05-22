@@ -27,7 +27,7 @@ dependencies = []
 description = "Code for simulating FINESSE spectra using LBLRTM"
 keywords = ["FINESSE","LBLRTM"]
 license = { file = "LICENSE" }
-name = "finesse_simulating"
+name = "fir_simulation_wrapper"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
 version = "0.1.0"
@@ -48,8 +48,8 @@ scripts = ["cycler", "matplotlib", "numpy>=2.0", "pandas", "scipy", "glob2","xar
 publishing = ["build", "twine", "wheel"]
 
 [project.urls]
-Repository = "https://github.com/ImperialCollegeLondon/finesse_simulating"
-Issues = "https://github.com/ImperialCollegeLondon/finesse_simulating/issues"
+Repository = "https://github.com/ImperialCollegeLondon/fir_simulation_wrapper"
+Issues = "https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/issues"
 
 
 [tool.tox]
@@ -87,13 +87,13 @@ pydocstyle.convention = "google"
 "aux/*" = ["ALL"]
 
 [tool.pytest.ini_options]
-addopts = "-v -p no:warnings --cov=src/finesse_simulating --cov-report=html --doctest-modules --ignore=example_runfiles --ignore=aux"
+addopts = "-v -p no:warnings --cov=src/fir_simulation_wrapper --cov-report=html --doctest-modules --ignore=example_runfiles --ignore=aux"
 
 [tool.bumpversion]
 current_version = "0.1.0"
 
 [[tool.bumpversion.files]]
-filename = "src/finesse_simulating/__init__.py"
+filename = "src/fir_simulation_wrapper/__init__.py"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
