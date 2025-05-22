@@ -44,7 +44,7 @@ dev = [
     "pytest-cov",
     "pytest-mock",
 ]
-scripts = ["cycler", "matplotlib", "numpy", "pandas", "scipy","shutil","os","subprocess","glob","xarray"]
+scripts = ["cycler", "matplotlib", "numpy>=2.0", "pandas", "scipy","shutil","os","subprocess","glob","xarray"]
 publishing = ["build", "twine", "wheel"]
 
 [project.urls]
