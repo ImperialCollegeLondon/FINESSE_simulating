@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 authors = [
-    { name = "Sophie Mosselmans", email = "sophie.mosselmans19@imperial.ac.uk" },
+    { name = "Sanjeevani Panditharatne", email = "sp1016@ic.ac.uk" },
 ]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -24,10 +24,10 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = []
-description = "Code for calibrating FINESSE interferograms"
-keywords = ["FINESSE"]
+description = "Code for simulating FINESSE spectra using LBLRTM"
+keywords = ["FINESSE","LBLRTM"]
 license = { file = "LICENSE" }
-name = "finesse_processing"
+name = "finesse_simulating"
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
 version = "0.1.0"
@@ -44,12 +44,12 @@ dev = [
     "pytest-cov",
     "pytest-mock",
 ]
-scripts = ["cycler", "matplotlib", "numpy>=2", "pandas", "scipy"]
+scripts = ["cycler", "matplotlib", "numpy>=2", "pandas", "scipy","shutil","os","subprocess","glob","xarray"]
 publishing = ["build", "twine", "wheel"]
 
 [project.urls]
-Repository = "https://github.com/ImperialCollegeLondon/finesse_processing"
-Issues = "https://github.com/ImperialCollegeLondon/finesse_processing/issues"
+Repository = "https://github.com/ImperialCollegeLondon/finesse_simulating"
+Issues = "https://github.com/ImperialCollegeLondon/finesse_simulating/issues"
 
 
 [tool.tox]
@@ -83,16 +83,16 @@ pydocstyle.convention = "google"
 ]
 
 # Ignore scripts as they'll be refactored soon. This can be removed at some point.
-"Python_code_multi/*" = ["ALL"]
+# "Python_code_multi/*" = ["ALL"]
 
 [tool.pytest.ini_options]
-addopts = "-v -p no:warnings --cov=src/finesse_processing --cov-report=html --doctest-modules --ignore=Python_code_multi"
+addopts = "-v -p no:warnings --cov=src/finesse_simulating --cov-report=html --doctest-modules --ignore=Python_code_multi"
 
 [tool.bumpversion]
 current_version = "0.1.0"
 
 [[tool.bumpversion.files]]
-filename = "src/finesse_processing/__init__.py"
+filename = "src/finesse_simulating/__init__.py"
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"

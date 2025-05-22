@@ -1,1 +1,1 @@
-"""Unit tests for FINESSE processing."""
+"""Unit tests for FINESSE simulating."""
