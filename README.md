@@ -65,7 +65,7 @@ source .venv/bin/activate
 
 ### Install the developer dependencies
 
-Next you will want to install the dependencies for `FINESSE_simulating` along with the developer tools required to work on the project.
+Next you will want to install the dependencies for `finesse_simulating` along with the developer tools required to work on the project.
 
 You can do this like so:
 
