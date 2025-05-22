@@ -144,10 +144,10 @@ def write_tape5_fn(
     # set default settings to override incase incorrect entry
 
     if angle == 0:
-        h_start_blackbody_surface = True
+        blackbody = True
         h_start_temp = 2.7  # temperature at h_start
 
-    if h_start_blackbody_surface == False:
+    if blackbody == False:
         "Running with emissivity file. EMISSIVITY and REFLECTIVTIY files must be in executable directory."
 
     # specify flags for selected profiles
