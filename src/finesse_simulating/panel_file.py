@@ -1,15 +1,15 @@
-"""
-    Not written by Greg Blumberg (OU/CIMMS)
+"""Not written by Greg Blumberg (OU/CIMMS)
 
-    I got this file from one of Dave Turner's colleagues (Aronne Merrelli)
+I got this file from one of Dave Turner's colleagues (Aronne Merrelli)
 
-    Jan 2023 Edited by Laura Warwick. Was not working as there was
-    a mistake reading in the panel headers. This now seems to be fixed
+Jan 2023 Edited by Laura Warwick. Was not working as there was
+a mistake reading in the panel headers. This now seems to be fixed
 
-    May 2025 Copied from Sophie Mosselmans Github
+May 2025 Copied from Sophie Mosselmans Github
 """
 
 from finesse_simulating.module_function_list import *
+
 
 class panel_file_hdr:
     def __init__(self, _f, data_types):

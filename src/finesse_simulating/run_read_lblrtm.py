@@ -3,8 +3,10 @@
 Functions to run the LBLRTM executable and read TAPE12 output
 
 """
+
 from finesse_simulating.module_function_list import *
 from finesse_simulating.panel_file import *
+
 
 # This class allows you to change the current working
 # directory as you would in linux. IT is needed to run
@@ -26,7 +28,7 @@ class cd:
         os.chdir(self.savedPath)
 
 
-def call_lblrtm(lbl_location,lbl_exe_name, save_location, OD):
+def call_lblrtm(lbl_location, lbl_exe_name, save_location, OD):
     """Runs the LBLRTM executable
 
     Args:
@@ -44,11 +46,11 @@ def call_lblrtm(lbl_location,lbl_exe_name, save_location, OD):
     # Move all files somewhere to be saved
     # IF this step is skipped, LBLRTM will overwrite these
     # files when it is run again
-    shutil.move(lbl_location+"TAPE5", save_location + "/TAPE5")
-    shutil.move(lbl_location+"TAPE6", save_location + "/TAPE6")
+    shutil.move(lbl_location + "TAPE5", save_location + "/TAPE5")
+    shutil.move(lbl_location + "TAPE6", save_location + "/TAPE6")
     # shutil.move(lbl_location+"TAPE7", save_location + "/TAPE7")
-    shutil.move(lbl_location+"TAPE11", save_location + "/TAPE11")
-    shutil.move(lbl_location+"TAPE12", save_location + "/TAPE12")
+    shutil.move(lbl_location + "TAPE11", save_location + "/TAPE11")
+    shutil.move(lbl_location + "TAPE12", save_location + "/TAPE12")
 
     # Also move OD files if created
     if OD == 1:

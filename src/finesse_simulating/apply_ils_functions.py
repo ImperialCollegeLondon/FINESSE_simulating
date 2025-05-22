@@ -9,6 +9,7 @@ Author: Sanjeevani Panditharatne
 
 from finesse_simulating.module_function_list import *
 
+
 def process_spectrum_general(
     frequency,
     radiance,
@@ -167,7 +168,7 @@ def apply_ILS_sav(ILS, wn, spectrum, pad_length=10):
             section to remove edge effects. Expressed in units of
             wavenumber
     """
-    print('Applying ILS sav file')
+    print("Applying ILS sav file")
 
     # Here I have redefined the start and end fre such that it is an array, to get the bins
     # the function requires the inputs start_fre and end_fre to be arrays of wavenumber rather than float values

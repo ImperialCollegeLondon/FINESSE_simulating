@@ -6,13 +6,14 @@ Authour: Sanjeevani Panditharatne
 Written: 30/04/2025
 """
 
-from finesse_simulating import *
 from define_inputs import *
+
+from finesse_simulating import *
 
 # Inputs are specified in define_inputs.py which calls the write_tape5.py script
 
 # Call LBLRTM to run simulation
-call_lblrtm(lbl_location,lbl_exe_name, save_location, OD)
+# call_lblrtm(lbl_location, lbl_exe_name, save_location, OD)
 
 # # Converts the TAPE12 output from a binary file into a numpy array.
 tape12_array = load_tape12(save_location, mode)
@@ -20,7 +21,7 @@ high_res_wn = tape12_array[0, :]
 high_res_spec = tape12_array[1, :]
 
 # # Apply FINESSE OPD = 1.21 onto a sampling grid of 0.2 cm-1
-print('========== Applying FINESSE ILS ==========')
+print("========== Applying FINESSE ILS ==========")
 wn_out, rad_out = process_spectrum_general(
     high_res_wn, high_res_spec, 0.2, 350, 1600, 1.21
 )
@@ -39,6 +40,6 @@ apodised_spectrum_mW = apodised_spectrum * 1e6
 plt.plot(apodised_wn, apodised_spectrum_mW)
 plt.xlabel("Wavenumber (cm$^{-1}$)")
 plt.ylabel("Radiance (mW m$^{-2}$ sr$^{-1}$ cm)")
-plt.savefig(save_location+"Output_Plot.jpg", dpi=300)
+plt.savefig(save_location + "Output_Plot.jpg", dpi=300)
 
 print("========== END ==========")

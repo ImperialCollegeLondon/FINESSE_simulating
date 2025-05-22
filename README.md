@@ -37,7 +37,7 @@ Required modules are in src/module_function_list.py
 
 The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
 
-## For developers
+## Setup Instructions for Developers
 
 ### Download the code
 
@@ -49,7 +49,7 @@ git clone git@github.com:ImperialCollegeLondon/finesse_simulating.git
 
 ### (Optionally) make a virtual environment
 
-We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `FINESSE_simulating` to keep the packages installed separate. You can do this like so:
+We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `finesse_simulating` to keep the packages installed separate. You can do this like so:
 
 ```sh
 python -m venv .venv
@@ -73,7 +73,7 @@ You can do this like so:
 pip install -e .[dev,scripts]
 ```
 
-### Install `pre-commit`
+<!-- ### Install `pre-commit`
 
 This project contains a configuration file for [`pre-commit`](https://pre-commit.com), a tool which automatically runs specified checks every time you make a commit with Git. The `pre-commit` command-line tool will be installed along with the other developer dependencies, but you **also** have to enable it for this repository, like so:
 
@@ -83,7 +83,7 @@ pre-commit install
 
 Now, whenever you make a Git commit, your changes will be checked for errors and stylistic problems. (For a list of the hooks enabled for this repository, [see the configuration file](./.pre-commit-config.yaml)).
 
-The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci](https://pre-commit.ci).
+The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci](https://pre-commit.ci). -->
 
 ## Credits
 
