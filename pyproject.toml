@@ -84,6 +84,7 @@ pydocstyle.convention = "google"
 
 # Ignore scripts as they're examples.
 "example_runfiles/*" = ["ALL"]
+"aux/*" = ["ALL"]
 
 [tool.pytest.ini_options]
 addopts = "-v -p no:warnings --cov=src/finesse_simulating --cov-report=html --doctest-modules --ignore=example_runfiles --ignore=aux"
