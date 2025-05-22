@@ -44,7 +44,7 @@ The project setup is documented in [project_setup.md](project_setup.md). Feel fr
 First you need to clone the repository:
 
 ```sh
-git clone git@github.com:ImperialCollegeLondon/finesse_simulating.git
+git clone git@github.com:ImperialCollegeLondon/fir_simulation_wrapper.git
 ```
 
 ### 2) (Optionally) make a virtual environment
