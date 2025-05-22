@@ -86,7 +86,7 @@ pydocstyle.convention = "google"
 "example_runfiles/*" = ["ALL"]
 
 [tool.pytest.ini_options]
-addopts = "-v -p no:warnings --cov=src/finesse_simulating --cov-report=html --doctest-modules --ignore=example_runfiles"
+addopts = "-v -p no:warnings --cov=src/finesse_simulating --cov-report=html --doctest-modules --ignore=example_runfiles --ignore=aux"
 
 [tool.bumpversion]
 current_version = "0.1.0"
