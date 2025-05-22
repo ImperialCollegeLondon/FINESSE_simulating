@@ -16,8 +16,7 @@ This repository is set up with Python versions:
 - 3.12
 
 Add or remove Python versions based on project requirements. See [the
-guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python) for more information about Python
-versions.
+guide](https://guide.esciencecenter.nl/#/best_practices/language_guides/python) for more information about Python versions.
 
 ## Package management and dependencies
 
