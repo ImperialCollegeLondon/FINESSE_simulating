@@ -1,5 +1,4 @@
 import numpy as np
-
 from finesse_simulating import write_tape5 as wr
 
 # Specify location of LBLRTM executable

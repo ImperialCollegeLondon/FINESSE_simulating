@@ -7,13 +7,15 @@ Written: 30/04/2025
 """
 
 from define_inputs import *
-
 from finesse_simulating import *
 
 # Inputs are specified in define_inputs.py which calls the write_tape5.py script
+# These are printed in the output for clarity
+print('LBLRTM Exe Location: ',lbl_location, lbl_exe_name)
+print('Save Location: ',save_location)
 
 # Call LBLRTM to run simulation
-# call_lblrtm(lbl_location, lbl_exe_name, save_location, OD)
+call_lblrtm(lbl_location, lbl_exe_name, save_location, OD)
 
 # # Converts the TAPE12 output from a binary file into a numpy array.
 tape12_array = load_tape12(save_location, mode)

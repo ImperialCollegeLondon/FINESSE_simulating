@@ -39,7 +39,7 @@ The project setup is documented in [project_setup.md](project_setup.md). Feel fr
 
 ## Setup Instructions for Developers
 
-### Download the code
+### 1) Download the code
 
 First you need to clone the repository:
 
@@ -47,7 +47,7 @@ First you need to clone the repository:
 git clone git@github.com:ImperialCollegeLondon/finesse_simulating.git
 ```
 
-### (Optionally) make a virtual environment
+### 2) (Optionally) make a virtual environment
 
 We recommend that you create a [virtual environment](https://docs.python.org/3/library/venv.html) for `finesse_simulating` to keep the packages installed separate. You can do this like so:
 
@@ -63,7 +63,7 @@ source .venv/bin/activate
 
 (If you are using a different shell, then there are other scripts in the `.venv/bin` folder you can use instead.)
 
-### Install the developer dependencies
+### 3) Install the developer dependencies
 
 Next you will want to install the dependencies for `finesse_simulating` along with the developer tools required to work on the project.
 
@@ -84,6 +84,13 @@ pre-commit install
 Now, whenever you make a Git commit, your changes will be checked for errors and stylistic problems. (For a list of the hooks enabled for this repository, [see the configuration file](./.pre-commit-config.yaml)).
 
 The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci](https://pre-commit.ci). -->
+
+### 4) Ready to run
+
+You are now ready to use this Python package to simualte FINESSE spectra using LBLRTM. Note that LBLRTM and the TAPE3 input must be configured separately.
+The profile and LBLRTM settings are specified in 'define_inputs.py'. These inputs are read into the example run file. Assuming your virtual environment is activated you can run the test script by doing:
+
+python example_runfiles/run_lblrtm_FINESSE.py
 
 ## Credits
 
