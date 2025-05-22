@@ -1,4 +1,4 @@
-# import python packages
+# list of the python packages
 import math as math
 import shutil
 import os

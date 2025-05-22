@@ -82,8 +82,8 @@ pydocstyle.convention = "google"
     "D104", # Missing docstring in public package
 ]
 
-# Ignore scripts as they'll be refactored soon. This can be removed at some point.
-# "Python_code_multi/*" = ["ALL"]
+# Ignore scripts as they're examples.
+"example_runfiles/*" = ["ALL"]
 
 [tool.pytest.ini_options]
 addopts = "-v -p no:warnings --cov=src/finesse_simulating --cov-report=html --doctest-modules --ignore=Python_code_multi"
