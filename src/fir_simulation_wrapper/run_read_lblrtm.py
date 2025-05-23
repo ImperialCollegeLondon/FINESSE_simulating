@@ -40,7 +40,7 @@ def call_lblrtm(lbl_location, lbl_exe_name, save_location, OD):
     # Change folder to where the LBLRTM executable is located
     with cd(lbl_location):
         # Run LBLRTM (the string should be the name of the LBLRTM executable)
-        sub.call("lblrtm_v12.17_linux_intel_dbl")
+        sub.call(lbl_exe_name)
 
     # Move all files somewhere to be saved
     # IF this step is skipped, LBLRTM will overwrite these
