@@ -48,7 +48,7 @@ mode = 1  # 1 = radiance, 0 = transmission
 OD = 0  # 0 = no optical depth files
 
 wr.write_tape5_fn(
-    (z / 1000),
+    z ,
     pressure,
     temp,
     h2o,
