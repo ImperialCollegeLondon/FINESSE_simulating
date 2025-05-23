@@ -9,7 +9,7 @@ Author: Sanjeevani Panditharatne
 
 import numpy as np
 import xarray as xr
-
+import os
 
 def rttov_forum_apodise(wn,spec):
     """Apply ILS to a spectrum
@@ -22,8 +22,8 @@ def rttov_forum_apodise(wn,spec):
 
     wn_min = min(wn)
     wn_max = max(wn)
-
-    nbs_wv, nbs_fl = np.loadtxt('/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/FORUM_RTTOV_ISRF.txt', unpack = True)
+    
+    nbs_wv, nbs_fl = np.loadtxt(os.environ['FIR_AUX_PATH']+'FORUM_RTTOV_ISRF.txt', unpack = True)
     
     #interpolate instrument line shape onto same freq scale (same gap between wn) - from -3 to -3
     #convultion specrum then instrument line shape - mode = same - normalised after, dvided by sum of instrument

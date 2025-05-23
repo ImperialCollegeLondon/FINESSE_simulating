@@ -10,6 +10,7 @@ import numpy as np
 from scipy.fftpack import fft, ifft
 from scipy.interpolate import interp1d
 import xarray as xr
+import os
 
 def ARIES_apod(wn,spec, vmin, vmax):
     """Apply ILS to a spectrum
@@ -80,7 +81,7 @@ def TAFTS_apod(wn,spec,vmin,vmax):
 
 # ;***** OPEN AND READ IN THE TAFTS APODISATION FUNCTION *****
 
-    kaiser40k_file = np.loadtxt('/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/K_10_40k.txt')
+    kaiser40k_file = np.loadtxt(os.environ['FIR_AUX_PATH']+'K_10_40k.txt')
 
 
 # ;***************************************************************************************************************************************

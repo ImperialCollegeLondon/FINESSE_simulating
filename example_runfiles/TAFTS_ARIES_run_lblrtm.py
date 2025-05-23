@@ -24,7 +24,7 @@ high_res_wn = tape12_array[0, :]
 high_res_spec = tape12_array[1, :]
 
 # # Apply FINESSE OPD = 1.21 onto a sampling grid of 0.2 cm-1
-print("========== Applying TAFTS ILS ==========")
+print("========== Applying TAFTS and ARIES ILS ==========")
 
 TAFTS_apodised_wn, TAFTS_apodised_spectrum = TAFTS_ARIES.TAFTS_apod(high_res_wn, high_res_spec,100,600)
 ARIES_apodised_wn, ARIES_apodised_spectrum = TAFTS_ARIES.ARIES_apod(high_res_wn, high_res_spec,600,1600)

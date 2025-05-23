@@ -85,12 +85,22 @@ Now, whenever you make a Git commit, your changes will be checked for errors and
 
 The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci](https://pre-commit.ci). -->
 
-### 4) Ready to run
+### 4) Set FIR_AUX_PATH
+
+Set this to the location of your aux path so the code can access the auxiliary ILS files.
+
+```sh
+export FIR_AUX_PATH='/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/'
+```
+
+### 5) Ready to run
 
 You are now ready to use this Python package to simualte FINESSE spectra using LBLRTM. Note that LBLRTM and the TAPE3 input must be configured separately.
 The profile and LBLRTM settings are specified in 'define_inputs.py'. These inputs are read into the example run file. Assuming your virtual environment is activated you can run the test script by doing:
 
+```sh
 python example_runfiles/run_lblrtm_FINESSE.py
+```
 
 ## Credits
 
