@@ -51,6 +51,11 @@ def call_lblrtm(lbl_location, lbl_exe_name, save_location, OD):
     shutil.move(lbl_location + "TAPE11", save_location + "/TAPE11")
     shutil.move(lbl_location + "TAPE12", save_location + "/TAPE12")
 
+    # Move emissivity and reflectivity files if created
+    if os.path.isfile(lbl_location+'EMISSIVITY')==True:
+        shutil.move(lbl_location + "EMISSIVITY", save_location + "/EMISSIVITY")
+        shutil.move(lbl_location + "REFLECTIVITY", save_location + "/REFLECTIVITY")
+
     # Also move OD files if created
     if OD == 1:
         optical_files = glob.glob("OD*")
