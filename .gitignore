@@ -2,6 +2,9 @@
 TAPE11
 TAPE12
 
+# Ignore nohup outputs
+*.out
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
