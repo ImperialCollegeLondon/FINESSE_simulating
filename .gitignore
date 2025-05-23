@@ -1,7 +1,7 @@
 # TAPE11 and TAPE12
 TAPE11
 TAPE12
-OD_deflt*
+ODdeflt_*
 
 # Ignore nohup outputs
 *.out
