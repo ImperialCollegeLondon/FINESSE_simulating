@@ -57,10 +57,10 @@ def call_lblrtm(lbl_location, lbl_exe_name, save_location, OD):
         shutil.move(lbl_location + "REFLECTIVITY", save_location + "/REFLECTIVITY")
 
     # Also move OD files if created
-    if OD == 1:
-        optical_files = glob.glob("OD*")
-        for o_file in optical_files:
-            os.rename(o_file, save_location + o_file)
+    all_files = os.listdir(lbl_location)
+    for file in all_files:
+        if 'OD' in file:
+            shutil.move(lbl_location + file, save_location + file)
     return
 
 
