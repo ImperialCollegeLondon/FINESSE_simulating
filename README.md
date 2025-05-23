@@ -4,7 +4,7 @@
 
 ## Documentation
 
-This contains the code to run LBLRTM simulations of different far-infrared instruments. This code was compiled by Sanjeevani Panditharatne, and is based on python scripts written by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
+This contains the code to run LBLRTM and LBLDIS simulations of different far-infrared instruments. This code was compiled by Sanjeevani Panditharatne, and is based on python scripts written by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
 
 This code is currently configured to simulate: FINESSE, FSI (RTTOV), and TAFTS/ARIES 
 
@@ -55,6 +55,8 @@ source .venv/bin/activate
 
 (If you are using a different shell, then there are other scripts in the `.venv/bin` folder you can use instead.)
 
+If you're going to use this package often you can add the above piece of code into your ./bashrc file (vi /home/<username>/.bashrc).
+
 ### 3) Install the developer dependencies
 
 Next you will want to install the dependencies for `fir_simulation_wrapper` along with the developer tools required to work on the project.
@@ -79,9 +81,10 @@ The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci]
 
 ### 4) Set FIR_AUX_PATH
 
-Set this to the location of your aux path so the code can access the auxiliary ILS files.
+Add this location of your aux path to your .bashrc file so the code can access the auxiliary ILS files.
 
 ```sh
+vi /home/<username>/.bashrc
 export FIR_AUX_PATH='/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/'
 ```
 
