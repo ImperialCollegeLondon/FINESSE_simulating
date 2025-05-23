@@ -6,9 +6,9 @@ Authour: Sanjeevani Panditharatne
 Written: 30/04/2025
 """
 
-from FINESSE_define_inputs import *
+from TAFTS_ARIES_define_inputs import *
 from fir_simulation_wrapper import *
-from fir_simulation_wrapper import FINESSE
+from fir_simulation_wrapper import TAFTS_ARIES
 
 # Inputs are specified in define_inputs.py which calls the write_tape5.py script
 # These are printed in the output for clarity
@@ -24,23 +24,20 @@ high_res_wn = tape12_array[0, :]
 high_res_spec = tape12_array[1, :]
 
 # # Apply FINESSE OPD = 1.21 onto a sampling grid of 0.2 cm-1
-print("========== Applying FINESSE ILS ==========")
-wn_out, rad_out = process_spectrum_general(
-    high_res_wn, high_res_spec, 0.2, 350, 1600, 1.21
-)
+print("========== Applying TAFTS ILS ==========")
 
-# # Apply the FINESSE instruMent line shape
-ILS_LOCATION = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/EM27_ILS_test1_3_25.sav"
-ils = FINESSE.readsav(ILS_LOCATION)
-ILS = ils["em27_ils"][:]
-apodised_wn, apodised_spectrum = FINESSE.apply_ILS_sav(ILS, wn_out, rad_out, pad_length=10)
+TAFTS_apodised_wn, TAFTS_apodised_spectrum = TAFTS_ARIES.TAFTS_apod(high_res_wn, high_res_spec,100,600)
+ARIES_apodised_wn, ARIES_apodised_spectrum = TAFTS_ARIES.ARIES_apod(high_res_wn, high_res_spec,600,1600)
 
 print("======== Finishing and Plotting ========")
 
 # Converted to mW
-apodised_spectrum_mW = apodised_spectrum * 1e6
+TAFTS_apodised_spectrum_mW = TAFTS_apodised_spectrum * 1e6
+ARIES_apodised_spectrum_mW = ARIES_apodised_spectrum * 1e6
 
-plt.plot(apodised_wn, apodised_spectrum_mW)
+plt.plot(TAFTS_apodised_wn, TAFTS_apodised_spectrum_mW)
+plt.plot(ARIES_apodised_wn, ARIES_apodised_spectrum_mW)
+
 plt.xlabel("Wavenumber (cm$^{-1}$)")
 plt.ylabel("Radiance (mW m$^{-2}$ sr$^{-1}$ cm)")
 plt.savefig(save_location + "Output_Plot.jpg", dpi=300)

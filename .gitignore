@@ -1,3 +1,7 @@
+# TAPE11 and TAPE12
+TAPE11
+TAPE12
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

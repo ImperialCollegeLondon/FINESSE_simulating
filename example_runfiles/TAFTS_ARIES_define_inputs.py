@@ -7,7 +7,7 @@ lbl_location = "/net/thunder/data1/sp1016/lblrtm_12.17/"
 lbl_exe_name = "lblrtm_v12.17_linux_intel_dbl"
 
 # Specify location to save the output files
-save_location ="/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/FSI/"
+save_location ="/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/TAFTS_ARIES/"
 
 # Specify location of profiles
 profile_folder = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_input/"
@@ -36,7 +36,7 @@ angle = 180
 h_start = pressure[0]  # Radiation calculation starts from altitude in hPa
 h_obs = pressure[-1]  ## Pressure height of observation (in this case the ground)
 
-h_start_blackbody_surface = True  # Assuming black body at
+h_start_blackbody_surface = False  # Assuming black body at
 h_start_temp = temp[0]
 
 # Set the wavenumber range and resolution

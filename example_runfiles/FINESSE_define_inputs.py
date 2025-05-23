@@ -6,7 +6,7 @@ lbl_location = "/net/thunder/data1/sp1016/lblrtm_12.17/"
 lbl_exe_name = "lblrtm_v12.17_linux_intel_dbl"
 
 # Specify location to save the output files
-save_location ="/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/"
+save_location ="/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/FINESSE/"
 
 # Specify location of profiles
 profile_folder = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_input/"
