@@ -2,38 +2,30 @@
 [![codecov](https://codecov.io/gh/ImperialCollegeLondon/fir_simulation_wrapper/graph/badge.svg?token=DTS433S9E2)](https://codecov.io/gh/ImperialCollegeLondon/fir_simulation_wrapper)
 [![CI](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/ci.yml/badge.svg)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/ci.yml)
 
-## Badges
-
-(Customize these badges with your own links, and check <https://shields.io/> or <https://badgen.net/> to see which other badges are available.)
-
-| fair-software.eu recommendations | |
-| :-- | :--  |
-| (1/5) code repository              | [![github repo badge](https://img.shields.io/badge/github-repo-000.svg?logo=github&labelColor=gray&color=blue)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper) |
-| (2/5) license                      | [![github license badge](https://img.shields.io/github/license/ImperialCollegeLondon/fir_simulation_wrapper)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper) |
-| (3/5) community registry           | [![RSD](https://img.shields.io/badge/rsd-fir_simulation_wrapper-00a3e3.svg)](https://www.research-software.nl/software/fir_simulation_wrapper) [![workflow pypi badge](https://img.shields.io/pypi/v/fir_simulation_wrapper.svg?colorB=blue)](https://pypi.python.org/project/fir_simulation_wrapper/) |
-| (4/5) citation                     | |
-| (5/5) checklist                    | [![workflow cii badge](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>/badge)](https://bestpractices.coreinfrastructure.org/projects/<replace-with-created-project-identifier>) |
-| howfairis                          | [![fair-software badge](https://img.shields.io/badge/fair--software.eu-%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8F%20%20%E2%97%8B-yellow)](https://fair-software.eu) |
-| **Other best practices**           | &nbsp; |
-| **GitHub Actions**                 | &nbsp; |
-| Build                              | [![build](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/build.yml/badge.svg)](https://github.com/ImperialCollegeLondon/fir_simulation_wrapper/actions/workflows/build.yml) |
-
 ## Documentation
 
-This contains the code to run LBLRTM simulations of FINESSE spectra which is separate from the processing code to read and calibrated FINESSE interferograms.
+This contains the code to run LBLRTM simulations of different far-infrared instruments. This code was compiled by Sanjeevani Panditharatne, and is based on python scripts written by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
 
-Code is based on work done by Laura Warwick, Sophie Mosselmans, and Sanjeevani Panditharatne.
+This code is currently configured to simulate: FINESSE, FSI (RTTOV), and TAFTS/ARIES 
 
 Contents include:
+- **/aux** contains files that describe the ILS of instruments.
+- **/docs** contains information about the ILS of each instrument
+- **/example_input** contains an example profile and example emissivity profile to be read
+- **/example_output** contains example outputs for each of the instruments.
+- **/src/fir_simulation_wrapper** folder that includes functions and modules used to interact with LBLRTM outputs
 
-- **/example_input** contains an example profile to be read
-- **/example_output** contains an example output and plot
-- **/src** folder that includes functions and modules used to interact with LBLRTM outputs which should not need to be edited
-- **define_inputs.py** which is used to input profile variables, input and output paths, and specify lblrtm version
-- **run_lblrtm_FINESSE.py** the script to write the TAPE5, run the exe, and apply the FINESSE instrument line shape
-- **EM27_ILS_test1_3_25.sav** is the EM27 ILS used for version 001 of the 2025_WHAFFFERS deliverarables (May 2025)
-
-Required modules are in src/module_function_list.py
+The src/fir_simulation_wrapper folder currently contains the following modules:
+- **__init__** used to import functions
+- **FINESSE** contains the functions to apply the ILS to simulations and contains the following functions: apply_ILS_sav ; apply_ILS_nc [REQUIRES MODULE REF TO LOAD FUNCTIONS]
+- **FSI** contains the functions to apply the ILS to simulations and contains the following functions: rttov_forum_apodise [REQUIRES MODULE REF TO LOAD FUNCTIONS]
+- **general_ils_functions** contains functions that could be useful for general spectral treatment: process_spectrum_general
+- **module_function_list** contains a list of useful python modules
+- **panel_file** contains the scripts used to read TAPE12s
+- **run_read_lblrtm** contains the following functions to run and read lblrtm output: call_lblrtm ; load_tape12
+- **TAFTS_ARIES** ontains the functions to apply the ILS to simulations and contains the following functions: ARIES_apod ; TAFTS_apod [REQUIRES MODULE REF TO LOAD FUNCTIONS]
+- **write_lbl_emiss** contains the following functions to write the EMISSIVITY and REFLECTIVITY files required for LBLRTM: write_lbl_emiss
+- **write_tape5** contains the following functions to write the TAPE5 file required for LBLRTM: write_tape5_fn
 
 The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
 
