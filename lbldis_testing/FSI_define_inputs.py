@@ -96,6 +96,7 @@ ssp=[os.environ['FIR_AUX_PATH']+'ssp_db.mie_wat.gamma_sigma_0p100',
 cloud_profile_name = profile_folder+'example_cloud_profile.txt'
 database,alt,eff_rad,ref_wv,tau_w = np.loadtxt(cloud_profile_name,unpack=True)
 
+tau_w=np.zeros_like(tau_w)
 
 # Convert already defined LBLRTM inputs into LBLDIS inputs
 if h_start_blackbody_surface==False:
@@ -117,10 +118,10 @@ wr_p.write_parameter_file(database,alt,eff_rad,ref_wv,tau_w,
                         save_location, 
                         lbldis_location,
                         t_surf=t_surf,
-                        angle=angle,
+                        angle=180-angle, #lbldis view angles are the other way around from lblrtm
                         ssp=ssp, 
                         start_wn = wn_range[0],
                         end_wn=1200,
-                        inc_wn=1, 
+                        inc_wn=res, 
                         log_re=False)
 

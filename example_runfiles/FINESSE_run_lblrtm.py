@@ -30,7 +30,7 @@ wn_out, rad_out = process_spectrum_general(
 )
 
 # # Apply the FINESSE instruMent line shape
-ILS_LOCATION = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/EM27_ILS_test1_3_25.sav"
+ILS_LOCATION = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/EM27_ILS_test1_3_25.sav" # WHAFFFERS ILS
 ils = FINESSE.readsav(ILS_LOCATION)
 ILS = ils["em27_ils"][:]
 apodised_wn, apodised_spectrum = FINESSE.apply_ILS_sav(ILS, wn_out, rad_out, pad_length=10)
