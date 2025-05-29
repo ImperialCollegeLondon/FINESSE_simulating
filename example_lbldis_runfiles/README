@@ -1,0 +1,3 @@
+LBLDIS INSTRUCTIONS
+
+1) Run LBLRTM to produce TAPE5 with different settings - take head of these in define_iputs.py
