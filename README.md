@@ -12,8 +12,12 @@ Contents include:
 - **/aux** contains files that describe the ILS of instruments.
 - **/docs** contains information about the ILS of each instrument
 - **/example_input** contains an example profile and example emissivity profile to be read
-- **/example_output** contains example outputs for each of the instruments.
+- **/example_lblrtm_output** contains example outputs for each of the instruments.
+- **/example_lbldis_output** contains example outputs for FSI only.
+- **/example_lblrtm_runfiles** contains example runfiles for each instrument that only call LBLRTM.
+- **/example_lbldis_output** contains example runfiles for the FSI that calls LBLRTM with the correct settings and then calls LBLDIS. NOTE: LBLDIS is a very slow model. Run at low res to test.
 - **/src/fir_simulation_wrapper** folder that includes functions and modules used to interact with LBLRTM outputs
+
 
 The src/fir_simulation_wrapper folder currently contains the following modules:
 - **__init__** used to import functions
@@ -22,9 +26,11 @@ The src/fir_simulation_wrapper folder currently contains the following modules:
 - **general_ils_functions** contains functions that could be useful for general spectral treatment: process_spectrum_general
 - **module_function_list** contains a list of useful python modules
 - **panel_file** contains the scripts used to read TAPE12s
+- **PREFIRE** ontains the functions to apply the ILS to simulations and contains the following functions: in_range ; apply_srf ; prefire_simulation
 - **run_read_lblrtm** contains the following functions to run and read lblrtm output: call_lblrtm ; load_tape12
-- **TAFTS_ARIES** ontains the functions to apply the ILS to simulations and contains the following functions: ARIES_apod ; TAFTS_apod [REQUIRES MODULE REF TO LOAD FUNCTIONS]
+- **TAFTS_ARIES** ontains the functions to apply the ILS to simulations and contains the following functions: ARIES_apod ; TAFTS_apod
 - **write_lbl_emiss** contains the following functions to write the EMISSIVITY and REFLECTIVITY files required for LBLRTM: write_lbl_emiss
+- **write_lbldis_parameter_file** contains the following functions to write the parameter file required for LBLDIS: write_parameter_file
 - **write_tape5** contains the following functions to write the TAPE5 file required for LBLRTM: write_tape5_fn
 
 The project setup is documented in [project_setup.md](project_setup.md). Feel free to remove this document (and/or the link to this document) if you don't need it.
@@ -84,8 +90,8 @@ The `pre-commit` hooks will also be run on every pull request by [pre-commit.ci]
 Add this location of your aux path to your .bashrc file so the code can access the auxiliary ILS files.
 
 ```sh
-vi /home/<username>/.bashrc
-export FIR_AUX_PATH='/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/'
+vi /home/<<username>>/.bashrc
+export FIR_AUX_PATH='/net/thunder/data1/<<username>>/FINESSE_LBLRTM/fir_simulation_wrapper/aux/'
 ```
 
 ### 5) Ready to run
