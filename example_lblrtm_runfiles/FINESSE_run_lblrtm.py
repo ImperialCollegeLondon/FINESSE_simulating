@@ -9,6 +9,7 @@ Written: 30/04/2025
 from FINESSE_define_inputs import *
 from fir_simulation_wrapper import *
 from fir_simulation_wrapper import FINESSE
+import os
 
 # Inputs are specified in define_inputs.py which calls the write_tape5.py script
 # These are printed in the output for clarity
@@ -32,7 +33,7 @@ wn_out, rad_out = process_spectrum_general(
 # # Apply the FINESSE instruMent line shape
 # Andoya ILS: EM27_ILS.sav
 # WHAFFFERS ILS: EM27_ILS_test1_3_25.sav
-ILS_LOCATION = "/net/thunder/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/aux/EM27_ILS_test1_3_25.sav" 
+ILS_LOCATION = os.environ['FIR_AUX_PATH']+"EM27_ILS_test1_3_25.sav" 
 ils = FINESSE.readsav(ILS_LOCATION)
 ILS = ils["em27_ils"][:]
 apodised_wn, apodised_spectrum = FINESSE.apply_ILS_sav(ILS, wn_out, rad_out, pad_length=10)

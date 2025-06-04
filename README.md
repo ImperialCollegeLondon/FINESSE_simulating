@@ -100,7 +100,9 @@ You are now ready to use this Python package to simualte FINESSE spectra using L
 The profile and LBLRTM settings are specified in 'define_inputs.py'. These inputs are read into the example run file. Assuming your virtual environment is activated you can run the test script by doing:
 
 ```sh
-python example_runfiles/run_lblrtm_FINESSE.py
+python example_lblrtm_runfiles/FINESSE_run_lblrtm.py
+python example_lbldis_runfiles/FSI_run_lbldis.py
+
 ```
 
 ## Credits
