@@ -41,6 +41,9 @@ print("======== Finishing and Plotting ========")
 
 # Converted to mW
 apodised_spectrum_mW = apodised_spectrum * 1e6
+# np.savetxt(save_location+'FINESSE_example_spectrum.txt',np.vstack([apodised_wn,apodised_spectrum_mW]).T,
+#            header='Example FINESSE LBLRTM output\nWN (cm^{-1})  Rad(mW m^{-2} sr^{-1} cm)',
+#            fmt=['%12.3f','%12.5f'])
 
 plt.plot(apodised_wn, apodised_spectrum_mW)
 plt.xlabel("Wavenumber (cm$^{-1}$)")

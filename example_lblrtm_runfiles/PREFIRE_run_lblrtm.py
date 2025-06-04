@@ -23,7 +23,7 @@ tape12_array = load_tape12(save_location, mode)
 high_res_wn = tape12_array[0, :]
 high_res_spec = tape12_array[1, :]
 
-# # Apply FINESSE OPD = 1.21 onto a sampling grid of 0.2 cm-1
+# # Apply PREFIRE ILS
 print("========== Applying PREFIRE ILS ==========")
 apodised_spectrum_ds = PREFIRE.prefire_simulation(high_res_spec, high_res_wn, 'TIRS1', spec_range=(wn_range[0],wn_range[1]), sc=0, reject_mask=0b000011, verbose=False)
 
@@ -33,6 +33,10 @@ print("======== Finishing and Plotting ========")
 # apodised_spectrum_mW = apodised_spectrum * 1e6
 
 plt.plot(apodised_spectrum_ds['channel'], apodised_spectrum_ds['channel_radiance'],marker='.')
+# np.savetxt(save_location+'PREFIRE_example_spectrum.txt',np.vstack([apodised_spectrum_ds['channel'], apodised_spectrum_ds['channel_radiance']]).T,
+#            header='Example PREFIRE LBLRTM output\nWL (microns)  Rad(mW m^{-2} sr^{-1} cm)',
+#            fmt=['%12.3f','%12.5f'])
+
 plt.xlabel("Wavelength ($\mu m$)")
 plt.ylabel("Radiance (mW m$^{-2}$ sr$^{-1}$ cm)")
 plt.savefig(save_location + "Output_Plot.jpg", dpi=300)

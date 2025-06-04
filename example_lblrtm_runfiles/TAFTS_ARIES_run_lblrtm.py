@@ -32,8 +32,17 @@ ARIES_apodised_wn, ARIES_apodised_spectrum = TAFTS_ARIES.ARIES_apod(high_res_wn,
 print("======== Finishing and Plotting ========")
 
 # Converted to mW
-TAFTS_apodised_spectrum_mW = TAFTS_apodised_spectrum * 1e6
-ARIES_apodised_spectrum_mW = ARIES_apodised_spectrum * 1e6
+TAFTS_apodised_spectrum_mW = TAFTS_apodised_spectrum.real * 1e6
+ARIES_apodised_spectrum_mW = ARIES_apodised_spectrum.real * 1e6
+
+# np.savetxt(save_location+'TAFTS_example_spectrum.txt',np.vstack([TAFTS_apodised_wn,TAFTS_apodised_spectrum_mW]).T,
+#            header='Example TAFTS LBLRTM output\nWN (cm^{-1})  Rad(mW m^{-2} sr^{-1} cm)',
+#            fmt=['%12.3f','%12.5f'])
+
+# np.savetxt(save_location+'ARIES_example_spectrum.txt',np.vstack([ARIES_apodised_wn,ARIES_apodised_spectrum_mW]).T,
+#            header='Example ARIES LBLRTM output\nWN (cm^{-1})  Rad(mW m^{-2} sr^{-1} cm)',
+#            fmt=['%12.3f','%12.5f'])
+
 
 plt.plot(TAFTS_apodised_wn, TAFTS_apodised_spectrum_mW)
 plt.plot(ARIES_apodised_wn, ARIES_apodised_spectrum_mW)
