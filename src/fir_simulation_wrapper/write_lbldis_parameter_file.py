@@ -79,7 +79,7 @@ def write_parameter_file(database,alt,eff_rad,ref_wv,tau_1,
         file_.write("{:04.1f} 30. 1.0	#Solar ".format(sza))
         file_.write(" zenith angle (deg), relative azimuth (deg), solar distance (a.u.)\n")
         file_.write("{}           # Zenith angle (degrees): 0 ->  upwelling, 180 -> downwelling\n".format(angle))
-        file_.write("{:4.1f} {} {}".format(start_wn,end_wn,inc_wn/100))
+        file_.write("{:4.1f} {} {}".format(start_wn,end_wn,inc_wn))
         file_.write("# v_start, v_end, and v_delta [cm-1]\n")
         file_.write("{}               ".format(sign))
         file_.write("# Cloud parameter option flag: ")
