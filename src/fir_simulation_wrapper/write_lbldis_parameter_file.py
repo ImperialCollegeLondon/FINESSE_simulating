@@ -103,7 +103,7 @@ def write_parameter_file(database,alt,eff_rad,ref_wv,tau_1,
             file_.write(database + "\n")
         file_.write("{}	     # Surface temperature (specifying a negative".format(t_surf))
         file_.write("value takes the value from profile)\n")
-        file_.write("{}	     #Number of surface spectral emissivity lines (wnum, emis)\n".format(len(sfc_em[1])))
-        for y in range(len(sfc_em[1])):
-            file_.write("{:10.3f}     {:5.3f}\n".format(sfc_em[0,y], sfc_em[1,y]))
+        file_.write("{}	     #Number of surface spectral emissivity lines (wnum, emis)\n".format(len(sfc_em[:,0])))
+        for y in range(len(sfc_em[:,0])):
+            file_.write("{:10.3f}     {:5.3f}\n".format(sfc_em[y,0], sfc_em[y,1]))
     return
