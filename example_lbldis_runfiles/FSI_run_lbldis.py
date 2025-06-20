@@ -17,7 +17,7 @@ print('Save Location: ',save_location)
 
 # Call LBLRTM to run simulation - note the output TAPES cannot be read by load_tape12 
 # using the LBLDIS required settings at the moment
-call_lblrtm(lbl_location, lbl_exe_name, save_location, OD)
+# call_lblrtm(lbl_location, lbl_exe_name, save_location, OD)
 
 # Run LBLDIS to run simulation
 call_lbldis(lbldis_location, save_location,output_filename)
@@ -45,13 +45,20 @@ lbldis_simulation=lbldis_simulation.sel(n_instances=0)
 high_res_wn = lbldis_simulation.wnum.values
 high_res_spec = lbldis_simulation.radiance.values
 
-print("========== Applying FORUM ILS ==========")
-apodised_wn, apodised_spectrum_mW = FSI.rttov_forum_apodise(high_res_wn, high_res_spec)
+clear_wn, clear_spectrum_mW = np.loadtxt('/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/FSI/FSI_example_spectrum.txt', unpack = True)
+plt.plot(clear_wn, clear_spectrum_mW*1E1,label='Clear')
 
-plt.plot(apodised_wn, apodised_spectrum_mW)
+print("========== Applying FORUM ILS ==========")
+# apodised_wn, apodised_spectrum_mW = FSI.rttov_forum_apodise(high_res_wn, high_res_spec)
+plt.plot(high_res_wn, high_res_spec, label='Cloudy')
+
+# plt.plot(apodised_wn, apodised_spectrum_mW, label='Cloudy')
 
 plt.xlabel("Wavenumber (cm$^{-1}$)")
 plt.ylabel("Radiance (mW m$^{-2}$ sr$^{-1}$ cm)")
+
+# ========== PLOTTING THE LBLRTM EXAMPLE SPECTRUM FOR REFERENCE =======
+plt.legend()
 plt.savefig(save_location + "Output_Plot.jpg", dpi=300)
 
 print("========== END ==========")

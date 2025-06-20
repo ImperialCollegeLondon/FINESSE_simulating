@@ -44,7 +44,7 @@ h_start_temp = temp[0]
 
 # Set the wavenumber range and resolution
 # Note Wavenumber>101 for database
-wn_range = [150, 1600]
+wn_range = [150, 1400]
 res = 0.1
 
 # Set the mode
@@ -96,15 +96,15 @@ ssp=[os.environ['FIR_AUX_PATH']+'ssp_db.mie_wat.gamma_sigma_0p100',
 cloud_profile_name = profile_folder+'example_cloud_profile.txt'
 database,alt,eff_rad,ref_wv,tau_w = np.loadtxt(cloud_profile_name,unpack=True)
 
-tau_w=np.zeros_like(tau_w)
+# tau_w=np.zeros_like(tau_w)
 
 # Convert already defined LBLRTM inputs into LBLDIS inputs
 if h_start_blackbody_surface==False:
     sfc_em = np.vstack([wn,emiss]).T
 else:
     # Define bb SE
-    wn = np.arange(wn_range[0]+10,wn_range[1]-10,1)
-    sfc_em = np.vstack([wn,np.full_like(wn,1)]).T
+    wn = np.arange(wn_range[0]+10,wn_range[-1]+10,100)
+    sfc_em = np.vstack([wn,np.full_like(wn,1)]) # It is setting it to 0.9
 
 # Set surface temperature to value at bottom of profile
 #  (i/e in this case it's never TOA temperature)
@@ -121,7 +121,7 @@ wr_p.write_parameter_file(database,alt,eff_rad,ref_wv,tau_w,
                         angle=180-angle, #lbldis view angles are the other way around from lblrtm
                         ssp=ssp, 
                         start_wn = wn_range[0],
-                        end_wn=1200,
+                        end_wn=wn_range[1],
                         inc_wn=res, 
                         log_re=False)
 
