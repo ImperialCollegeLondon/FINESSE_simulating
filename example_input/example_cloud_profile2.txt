@@ -1,0 +1,7 @@
+#  Database Alt (km) CER (mu) Ref WN (cm-1)  OD at Ref WN
+
+1 7.408 40. 18181.82 0.75	 #database  height  effective_radius  ref_wavelength in cm-1  tau_1  tau_2...
+1 8.013 40. 18181.82 0.75 
+1 8.527 40. 18181.82 0.75
+1 9.032 40. 18181.82 0.75
+1 9.538 40. 18181.82 0.75

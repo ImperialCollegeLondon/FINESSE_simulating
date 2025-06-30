@@ -1,8 +1,8 @@
 LBLDIS parameter file
 16		# Number of streams
 -60.0 30. 1.0	#Solar  zenith angle (deg), relative azimuth (deg), solar distance (a.u.)
-0           # Zenith angle (degrees): 0 ->  upwelling, 180 -> downwelling
-   150.000   1400.000      1.000# v_start, v_end, and v_delta [cm-1]
+180           # Zenith angle (degrees): 0 ->  upwelling, 180 -> downwelling
+   350.000   1400.000      1.000# v_start, v_end, and v_delta [cm-1]
 1               # Cloud parameter option flag: # 0: reff and numdens, >=1:  reff and tau - database height effective_radius ref_wavelength in cm-1 tau_1 tau_2...
 4               # Number of cloud layers
 1.000 6.370 34.000 28169.016 5.000E-02
