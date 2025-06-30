@@ -111,6 +111,7 @@ def call_lbldis(lbldis_location, save_location,output_filename):
             os.system('cp '+ save_location+file +' '+ lbldis_location+file)
     print('LBLDIS Location: ' +lbldis_location)
     print("===== Starting LBLDIS =====")
+    print('Remember this will continue to append an existing file!')
     # Change folder to where the LBLRTM executable is located
     with cd(lbldis_location):
         # Run LBLDIS (the string should be the name of the LBLRTM executable)
