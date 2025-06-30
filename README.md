@@ -104,14 +104,14 @@ python example_lblrtm_runfiles/FINESSE_run_lblrtm.py
 python example_lbldis_runfiles/FSI_run_lbldis.py
 
 ```
-## LBLRTM SPECIFIC INSTRUCTIONS
-
-
 
 ## LBLDISv3.0 SPECIFIC INSTRUCTIONS
 
 All of the LBLDIS stuff is based off work done by Rich Bantges and Sanjeevani Panditharatne. The key executables are soft linked to Richard Bantges directories 
+
 The README for LBLDISv3.0 is stored here: /net/sirocco/users/bantges/lbldis.Release_3_0/README.lbldis.Release_3_0.txt
+
+NOTE: Be aware that the resolution = sampling (I think) so you may need higher resolution for things
 
 ## TO DO LIST
 There are a number of checks that still need to be made to this, particualrly for the LBLDIS wrapper.
