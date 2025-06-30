@@ -37,7 +37,7 @@ wr_e.write_lbl_emiss(lbl_location,wn,emiss)
 # Specify view: angle = 0 for downwelling and =180 for upwelling
 angle = 180
 h_start = pressure[0]  # Radiation calculation starts from altitude in hPa
-h_obs = pressure[-1]  ## Pressure height of observation (in this case the ground)
+h_obs = pressure[-1]  ## Pressure height of observation
 
 h_start_blackbody_surface = False  # Assuming black body at
 h_start_temp = temp[0]
@@ -45,7 +45,7 @@ h_start_temp = temp[0]
 # Set the wavenumber range and resolution
 # Note Wavenumber>101 for database
 wn_range = [150, 1400]
-res = 0.1
+res = 1
 
 # Set the mode
 mode = 1  # 1 = radiance, 0 = transmission
@@ -112,6 +112,8 @@ if angle==180:
     t_surf=h_start_temp
 else:
     t_surf=temp[0]
+
+print('Setting surface temperature to (K): ',t_surf)
 
 wr_p.write_parameter_file(database,alt,eff_rad,ref_wv,tau_w,  
                         sfc_em, 

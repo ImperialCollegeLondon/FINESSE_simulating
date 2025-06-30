@@ -22,42 +22,25 @@ print('Save Location: ',save_location)
 # Run LBLDIS to run simulation
 call_lbldis(lbldis_location, save_location,output_filename)
 
+# ============= READ AND PLOT EXAMPLE LBLRTM SIMULATION
+# Loading preconverted clear sky spectrum
+clear_wn, clear_spectrum_mW = np.loadtxt('/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/FSI/FSI_example_spectrum.txt', unpack = True)
 
-# ============= READ AND PLOT LBLRTM SIMULATION
-# # Converts the TAPE12 output from a binary file into a numpy array.
-# tape12_array = load_tape12(save_location, mode)
-# high_res_wn = tape12_array[0, :]
-# high_res_spec = tape12_array[1, :]
 
-# print("========== Applying FORUM ILS ==========")
-# apodised_wn, apodised_spectrum = FSI.rttov_forum_apodise(high_res_wn, high_res_spec)
-
-# print("======== Finishing and Plotting ========")
-
-# # Converted to mW
-# apodised_spectrum_mW = apodised_spectrum * 1e6
-
-# plt.plot(apodised_wn, apodised_spectrum_mW)
-
-# ============== READ AND PLOT LBLDIS SIMULATION
+print("========== Applying FORUM ILS TO LBLDIS SIMULATION ==========")
 lbldis_simulation = xr.open_dataset(output_filename+'.cdf')
 lbldis_simulation=lbldis_simulation.sel(n_instances=0)
 high_res_wn = lbldis_simulation.wnum.values
 high_res_spec = lbldis_simulation.radiance.values
+apodised_wn, apodised_spectrum = FSI.rttov_forum_apodise(high_res_wn, high_res_spec)
 
-clear_wn, clear_spectrum_mW = np.loadtxt('/data1/sp1016/FINESSE_LBLRTM/fir_simulation_wrapper/example_output/FSI/FSI_example_spectrum.txt', unpack = True)
+print("======== Finishing and Plotting ========")
 plt.plot(clear_wn, clear_spectrum_mW*1E1,label='Clear')
-
-print("========== Applying FORUM ILS ==========")
-# apodised_wn, apodised_spectrum_mW = FSI.rttov_forum_apodise(high_res_wn, high_res_spec)
-plt.plot(high_res_wn, high_res_spec, label='Cloudy')
-
-# plt.plot(apodised_wn, apodised_spectrum_mW, label='Cloudy')
+plt.plot(apodised_wn, apodised_spectrum,label='Cloudy')
 
 plt.xlabel("Wavenumber (cm$^{-1}$)")
 plt.ylabel("Radiance (mW m$^{-2}$ sr$^{-1}$ cm)")
 
-# ========== PLOTTING THE LBLRTM EXAMPLE SPECTRUM FOR REFERENCE =======
 plt.legend()
 plt.savefig(save_location + "Output_Plot.jpg", dpi=300)
 

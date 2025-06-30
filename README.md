@@ -105,6 +105,9 @@ python example_lbldis_runfiles/FSI_run_lbldis.py
 
 ```
 
+### 6) TO DO LIST
+There are a number of checks that still need to be made to this, particualrly for the LBLDIS wrapper.
+
 ## Credits
 
 This package was created with [Copier](https://github.com/copier-org/copier) and the [NLeSC/python-template](https://github.com/NLeSC/python-template).

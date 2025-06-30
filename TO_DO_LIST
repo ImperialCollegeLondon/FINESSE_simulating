@@ -1,2 +1,3 @@
 1) Update README for LBLDIS applications
+2) Check the resolution for LBLDIS is being done properly - is it supposed to update every 10x inc_wn or every inc_wn?
 3) Tidy up commenting of code

@@ -536,12 +536,12 @@ def write_tape5_lbldis_fn(
         # If using standard continuum
         if not continuum:
             file.write(
-                f" HI=1 F4=1 CN=1 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=1 LA=0 OD={od:1d} XS=0   00   00\n"
+                f" HI=1 F4=1 CN=1 AE=0 EM=1 SC=2 FI=0 PL=0 TS=0 AM=1 MG=1 LA=0 OD={od:1d} XS=0   00   00\n"
             )
         else:
             # To specify scaling on continuum
             file.write(
-                f" HI=1 F4=1 CN=6 AE=0 EM=1 SC=0 FI=0 PL=0 TS=0 AM=1 MG=1 LA=0 OD={od:1d} XS=0   00   00\n"
+                f" HI=1 F4=1 CN=6 AE=0 EM=1 SC=2 FI=0 PL=0 TS=0 AM=1 MG=1 LA=0 OD={od:1d} XS=0   00   00\n"
             )
             file.write(
                 "{:.5f} {:.5f} {:.5f} {:.5f} {:.5f} {:.5f} {:.5f}\n".format(*continuum)
